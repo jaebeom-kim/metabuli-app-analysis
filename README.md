@@ -15,7 +15,7 @@ https://github.com/shenwei356/gtdb-taxdump/releases
 # 4. Make a database 5 times
 ## Let GTDB_TAXDUMP be the unzipped directory of file you downloaded in step 3
 
-run_build.sh DBDIR GTDB_TAXDUMP THREADS
+run_build.sh METABULI_PATH DBDIR GTDB_TAXDUMP THREADS
 ## It runs the command below 5 times
 ## metabuli build DBDIR DBDIR/downloaded_files.txt GTDB_TAXDUMP/taxid.map --taxonomy-path GTDB_TAXDUMP --gtdb 1 --threads TRHEADS --make-library 0
 ```
@@ -46,5 +46,12 @@ metabuli updateDB NEW_DBDIR genomes.txt NEW_DBDIR/newtaxa.accession2taxid DBDIR 
 ## Classify
 
 ```
+# 1. classify human gut short reads
+## Sample data: SRR24315757
 
+./run_classify_short.sh METABULI_PATH SRR24315757_1.fastq SRR24315757_2.fastq DBDIR OUTDIR short MAXRAM THREADS
+
+# 2. classify human gut long reads
+## Sample data: SRR15489014
+./run_classify_long.sh METABULI_PATH SRR15489014.fastq DBDIR OUTDIR long MAXRAM THREADS
 ```

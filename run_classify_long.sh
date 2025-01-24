@@ -12,6 +12,8 @@ if [ -z "$METABULI_PATH" ] || [ -z "$QUERY" ] || [ -z "$DBDIR" ] || [ -z "$OUTDI
     exit 1
 fi
 
+mkdir -p $OUTDIR
+
 $METABULI_PATH classify --seq-mode 3 $QUERY1 $QUERY2 $DBDIR $OUTDIR $JOBNAME --threads $THREADS --max-ram $MAXRAM > "$OUTDIR/${JOBNAME}-1.log" 2> "$OUTDIR/${JOBNAME}-1.err"
 $METABULI_PATH classify --seq-mode 3 $QUERY1 $QUERY2 $DBDIR $OUTDIR $JOBNAME --threads $THREADS --max-ram $MAXRAM > "$OUTDIR/${JOBNAME}-2.log" 2> "$OUTDIR/${JOBNAME}-2.err"
 $METABULI_PATH classify --seq-mode 3 $QUERY1 $QUERY2 $DBDIR $OUTDIR $JOBNAME --threads $THREADS --max-ram $MAXRAM > "$OUTDIR/${JOBNAME}-3.log" 2> "$OUTDIR/${JOBNAME}-3.err"
