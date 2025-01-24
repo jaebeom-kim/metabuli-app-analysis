@@ -16,9 +16,8 @@ https://github.com/shenwei356/gtdb-taxdump/releases
 ## Let GTDB_TAXDUMP be the unzipped directory of file you downloaded in step 3
 
 run_build.sh DBDIR GTDB_TAXDUMP THREADS
-
-# It runs the command below 5 times
-# metabuli build DBDIR DBDIR/downloaded_files.txt GTDB_TAXDUMP/taxid.map --taxonomy-path GTDB_TAXDUMP --gtdb 1 --threads TRHEADS
+## It runs the command below 5 times
+## metabuli build DBDIR DBDIR/downloaded_files.txt GTDB_TAXDUMP/taxid.map --taxonomy-path GTDB_TAXDUMP --gtdb 1 --threads TRHEADS --make-library 0
 ```
 
 ## Database update
@@ -35,6 +34,7 @@ Dependencies: wget, awk, csvtk, taxonkit
 ./prepare-accession2taxid.sh ICTV_TAXONOMY_DIR
 
 # 3. Creat a new taxa list
+## DBDIR is the directory used in "Database creation" section.
 find VIRAL_GENOMES_DIR -name "*.fna.gz" > genomes.txt
 metabuli createnewtaxalist DBDIR genomes.txt ICTV_TAXONOMY_DIR ICTV_TAXONOMY_DIR/ictv.accession2taxid NEW_DBDIR
 
