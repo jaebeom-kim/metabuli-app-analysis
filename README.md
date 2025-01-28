@@ -15,9 +15,9 @@ https://github.com/shenwei356/gtdb-taxdump/releases
 # 4. Make a database 5 times
 ## Let GTDB_TAXDUMP be the unzipped directory of file you downloaded in step 3
 
-run_build.sh METABULI_PATH DBDIR GTDB_TAXDUMP THREADS
+./run_build.sh METABULI_PATH DBDIR GTDB_TAXDUMP THREADS MAXRAM
 ## It runs the command below 5 times
-## metabuli build DBDIR DBDIR/downloaded_files.txt GTDB_TAXDUMP/taxid.map --taxonomy-path GTDB_TAXDUMP --gtdb 1 --threads TRHEADS --make-library 0
+## metabuli build DBDIR DBDIR/downloaded_files.txt GTDB_TAXDUMP/taxid.map --taxonomy-path GTDB_TAXDUMP --gtdb 1 --threads TRHEADS --max-ram MAXRAM --make-library 0
 ```
 
 ## Database update
