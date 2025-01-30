@@ -39,7 +39,7 @@ find viral_genbank -name "*.fna.gz" -print0 | xargs -0 realpath > viral_genomes.
 metabuli createnewtaxalist DBDIR viral_genomes.txt ICTV_TAXONOMY_DIR ICTV_TAXONOMY_DIR/ictv.accession2taxid NEW_DBDIR
 
 # 4. Update the database
-metabuli updateDB NEW_DBDIR genomes.txt NEW_DBDIR/newtaxa.accession2taxid DBDIR --new-taxa NEW_DBDIR/newtaxa.tsv --make-library 0
+./run_updateDB.sh METABULI_PATH NEW_DBDIR viral_genomes.txt DBDIR THREADS MAXRAM
 
 ```
 
