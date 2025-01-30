@@ -39,7 +39,7 @@ find VIRAL_GENOMES_DIR -name "*.fna.gz" > genomes.txt
 metabuli createnewtaxalist DBDIR genomes.txt ICTV_TAXONOMY_DIR ICTV_TAXONOMY_DIR/ictv.accession2taxid NEW_DBDIR
 
 # 4. Update the database
-metabuli updateDB NEW_DBDIR genomes.txt NEW_DBDIR/newtaxa.accession2taxid DBDIR --new-taxa NEW_DBDIR/newtaxa.tsv
+metabuli updateDB NEW_DBDIR genomes.txt NEW_DBDIR/newtaxa.accession2taxid DBDIR --new-taxa NEW_DBDIR/newtaxa.tsv --make-library 0
 
 ```
 

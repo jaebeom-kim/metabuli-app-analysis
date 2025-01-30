@@ -7,6 +7,8 @@ if [ -z "$DBDIR" ]; then
     exit 1
 fi
 
+mkdir -p $DBDIR
+
 # Download GTDB metadata
 aria2c -x 16 -j 16 -s 16 \
     https://data.ace.uq.edu.au/public/gtdb/data/releases/latest/bac120_metadata.tsv.gz \
