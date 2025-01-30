@@ -97,7 +97,12 @@ awk -F '\t' 'NR==FNR {patterns[$1]; next} {key=substr($1, 1, index($1, ".")-1); 
     > $DBDIR/ftp_path_bacteria_rs.txt
 
 cat $DBDIR/ftp_path_archaea_gb.txt $DBDIR/ftp_path_bacteria_gb.txt $DBDIR/ftp_path_archaea_rs.txt $DBDIR/ftp_path_bacteria_rs.txt > $DBDIR/ftp_path_genomic_tmp.txt
+
+rm $DBDIR/ftp_path_archaea_gb.txt $DBDIR/ftp_path_bacteria_gb.txt $DBDIR/ftp_path_archaea_rs.txt $DBDIR/ftp_path_bacteria_rs.txt
+
 awk -F '/' '{print $0"/"$NF"_genomic.fna.gz"}' $DBDIR/ftp_path_genomic_tmp.txt > $DBDIR/ftp_path_genomic_fna.txt
+rm $DBDIR/ftp_path_genomic_tmp.txt
+
 
 
 # Download genomes

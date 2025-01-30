@@ -11,6 +11,7 @@ if [ -z "$DBDIR" ] || [ -z "$GTDB_TAXDUMP" ] || [ -z "$THREADS" ] || [ -z "$META
     exit 1
 fi
 
+mkdir -p $DBDIR
 
 # Run build five time and redirect stdout and stderr of each run to separate files
 $METABULI_PATH build $DBDIR $DBDIR/downloaded_files.txt $GTDB_TAXDUMP/taxid.map --taxonomy-path $GTDB_TAXDUMP --gtdb 1 --threads $THREADS --max-ram $MAXRAM --make-library 0 > $DBDIR/build1.log 2> $DBDIR/build1.err
