@@ -35,11 +35,11 @@ Dependencies: wget, awk, csvtk, taxonkit
 
 # 3. Creat a new taxa list
 ## DBDIR is the directory used in "Database creation" section.
-find VIRAL_GENOMES_DIR -name "*.fna.gz" > genomes.txt
-metabuli createnewtaxalist DBDIR genomes.txt ICTV_TAXONOMY_DIR ICTV_TAXONOMY_DIR/ictv.accession2taxid NEW_DBDIR
+find viral_genbank -name "*.fna.gz" -print0 | xargs -0 realpath > viral_genomes.txt
+metabuli createnewtaxalist DBDIR viral_genomes.txt ICTV_TAXONOMY_DIR ICTV_TAXONOMY_DIR/ictv.accession2taxid NEW_DBDIR
 
 # 4. Update the database
-metabuli updateDB NEW_DBDIR genomes.txt NEW_DBDIR/newtaxa.accession2taxid DBDIR --new-taxa NEW_DBDIR/newtaxa.tsv
+metabuli updateDB NEW_DBDIR viral_genomes.txt NEW_DBDIR/newtaxa.accession2taxid DBDIR --new-taxa NEW_DBDIR/newtaxa.tsv
 
 ```
 

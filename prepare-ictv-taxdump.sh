@@ -9,7 +9,7 @@ wget https://ictv.global/sites/default/files/VMR/VMR_MSL39.v4_20241106.xlsx
 # Extract MSL as a TSV file
 csvtk xlsx2csv VMR_MSL39.v4_20241106.xlsx -n "VMR MSL39" | csvtk csv2tab > msl.tsv
 
-sed -i 's/\xc2\xa0/ /g' msl.tsv
+sed -i '' 's/\xc2\xa0/ /g' msl.tsv
 
 # remove a newline character and a space introduced by accident
 csvtk replace -t -F -f "*" -p "^\s+|\s+$" msl.tsv \
