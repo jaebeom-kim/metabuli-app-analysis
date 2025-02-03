@@ -49,9 +49,9 @@ metabuli createnewtaxalist DBDIR viral_genomes.txt ICTV_TAXONOMY_DIR ICTV_TAXONO
 # 1. classify human gut short reads
 ## Sample data: SRR24315757
 
-./run_classify_short.sh METABULI_PATH SRR24315757_1.fastq SRR24315757_2.fastq DBDIR OUTDIR short MAXRAM THREADS
+./run_classify_short.sh METABULI_PATH SRR24315757_1.fastq SRR24315757_2.fastq DBDIR OUTDIR short THREADS MAXRAM
 
 # 2. classify human gut long reads
 ## Sample data: SRR15489014
-./run_classify_long.sh METABULI_PATH SRR15489014.fastq DBDIR OUTDIR long MAXRAM THREADS
+./run_classify_long.sh METABULI_PATH SRR15489014.fastq DBDIR OUTDIR long THREADS MAXRAM
 ```
